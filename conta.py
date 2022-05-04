@@ -15,8 +15,13 @@ class Conta:
     def saca(self, valor):
         self.__saldo -= valor
 
+    def transfere(self, valor, destino):
+        self.saca(valor)
+        destino.saca(valor)
 
 
 
-        # obs: self é a referência que sabe encontar aquele objeto que está sendo criado no módulo.
-#       # __saldo deixa o atributo privado - encapsula o acesso ao atributo
+
+# obs: self é a referência que sabe encontar aquele objeto que está sendo criado no módulo.
+# __saldo deixa o atributo privado - encapsula o acesso ao atributo
+# self pode acessar um atributo assim como um método
