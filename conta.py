@@ -19,12 +19,14 @@ class Conta:
     def saca(self, valor):
         if (self.__pode_sacar(valor)):
             self.__saldo -= valor
+            print("Saque efetuado.")
         else:
             print('O valor de R$ {} ultrapassa o limite de R$ {}.'.format(valor, (self.saldo + self.limite)))
 
     def transfere(self, valor, destino):
         self.saca(valor)
         destino.saca(valor)
+        print("Transferência efetuada.")
 
     @property
     def saldo(self):
@@ -41,6 +43,10 @@ class Conta:
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
+
+    @staticmethod
+    def codigos_bancos():
+        return {'BB': '001', 'Caixa': '104', 'Bradesco':'237'}
 
 
 # obs: self é a referência que sabe encontar aquele objeto que está sendo criado no módulo.
